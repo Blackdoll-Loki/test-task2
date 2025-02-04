@@ -35,3 +35,27 @@ document.addEventListener("DOMContentLoaded", function () {
     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelector(".blog-slides");
+  const images = document.querySelectorAll(".blog-slides img");
+  const prev = document.getElementById("blog-prev");
+  const next = document.getElementById("blog-next");
+
+  let index = 0;
+  const totalSlides = images.length;
+
+  function updateSlider() {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  next.addEventListener("click", () => {
+    index = (index + 1) % totalSlides;
+    updateSlider();
+  });
+
+  prev.addEventListener("click", () => {
+    index = (index - 1 + totalSlides) % totalSlides;
+    updateSlider();
+  });
+});

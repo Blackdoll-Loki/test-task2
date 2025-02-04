@@ -298,4 +298,73 @@ input {
   margin: 0;
   font-size: 18px;
 }
+/* slider */
+/* Blog Slider */
+.blog-slider {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
 
+.blog-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.blog-slide {
+  min-width: 100%; /* Ширина кожного слайду */
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-slide img {
+  width: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.blog-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.blog-excerpt {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+  max-width: 800px;
+  text-align: center;
+}
+
+.blog-slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  font-size: 24px;
+  z-index: 20;
+  border-radius: 50%;
+}
+
+#blog-prev {
+  left: 20px;
+}
+
+#blog-next {
+  right: 20px;
+}
+
+.blog-slider-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
