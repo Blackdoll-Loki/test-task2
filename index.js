@@ -59,3 +59,16 @@ document.addEventListener("DOMContentLoaded", function () {
     updateSlider();
   });
 });
+
+document.getElementById('burger').addEventListener('click', function() {
+  document.querySelector('.nav-list').classList.add('open');
+  document.querySelector('.burger').style.display = 'none';  // Hide burger when menu is open
+  document.getElementById('close-menu').style.display = 'block'; // Show close button
+});
+
+document.getElementById('close-menu').addEventListener('click', function() {
+  document.querySelector('.nav-list').classList.remove('open');
+  document.querySelector('.burger').style.display = 'flex';  // Show burger again when menu is closed
+  document.getElementById('close-menu').style.display = 'none'; // Hide close button
+});
+

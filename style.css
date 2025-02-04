@@ -15,6 +15,8 @@ body {
   background-color: #EAE4D9;
 }
 
+
+/* Header */
 header {
   position: absolute;
   top: 0;
@@ -25,7 +27,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 15%;
-  background: rgba(0, 0, 0, 0.5); 
+  background: rgba(0, 0, 0, 0.5);
   color: white;
 }
 
@@ -36,6 +38,7 @@ header {
   filter: invert(1) brightness(100%);
 }
 
+/* Menu */
 .nav-list {
   display: flex;
   justify-content: center;
@@ -52,6 +55,44 @@ header {
 .nav-list li:hover {
   color: #EEF09B;
 }
+
+/* Burger menu */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger-line {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Close button */
+.close-menu {
+  display: none; /* Сховати кнопку за замовчуванням */
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Optional: Add animations */
+.nav-list li {
+  transition: all 0.3s ease;
+}
+
+.nav-list li:hover {
+  color: #EEF09B;
+}
+
+
+
 
 .slider-container {
   position: relative;
@@ -367,4 +408,35 @@ input {
 
 .blog-slider-btn:hover {
   background: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    display: none; /* Hide the list on mobile */
+    width: 200px; /* Increased width for better look */
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background */
+    padding: 20px;
+    border-radius: 8px;
+    flex-direction: column;
+    gap: 15px;
+    transform: translateX(100%); /* Hide off-screen by default */
+    transition: transform 0.3s ease; /* Smooth transition */
+  }
+
+  .nav-list.open {
+    display: flex;
+    transform: translateX(0); /* Slide in when opened */
+  }
+
+  .burger {
+    display: flex; /* Show burger on mobile */
+  }
+
+  /* Показати кнопку закриття тільки, коли меню відкрите */
+  .nav-list.open + .close-menu {
+    display: block;
+  }
 }
